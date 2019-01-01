@@ -1,0 +1,21 @@
+/*simple reset using universal selector*/
+/*This will select each and every element on the page and apply the decalarations here*/
+*,
+*::after,
+*::before { /*This will be also applied in pseudo-class*/
+	/*because by default, browser apply margins and padding*/
+	margin: 0;	
+	padding: 0;
+	box-sizing: inherit; /*This will forcely inherit the box sizing we declared in the body*/
+}
+
+/*rem unit always related to the root font-size*/
+/*rem is very useful because when you change this value, it will affect the whole website and best for responsive website*/
+html {
+	font-size: 62.5%; /*We do this because the default size of browser's font is 16px, and we want it to be divisible by 10px (10px/16px = 0.625 or 62.5%)*/
+	/*So if the user change their font size in the browser, your website sizes will be change as well*/
+}
+
+body { 
+	box-sizing: border-box; /*This will change the box model so that the borders and the paddings are no longer added to the total width or the total height*/
+}

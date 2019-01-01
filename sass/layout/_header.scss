@@ -1,0 +1,37 @@
+.header {
+	height: 95vh; /*means 95% of the viewport height*/
+
+	/*The below coloring method is only avaiable in SASS*/
+	background-image: linear-gradient(to right bottom, 
+		rgba($color-primary-light, 0.8),
+		rgba($color-primary-dark, 0.8)), 
+		url(../img/hero.jpg); /*since we are at the css folder, we need to move 1 step backward on the directory using ".."*/
+	background-size: cover; /*the size will be fit based on the viewport*/
+	background-position: top; /*this will focus to this position (top, center, bottom etc.) when you resize*/
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*reference: https://bennettfeely.com/clippy/*/
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*reference: https://bennettfeely.com/clippy/*/
+	position: relative;
+
+	&__logo-box {
+	/*this will reference the position of the parent element and that should be relative (in this case, the parent elem is the header*/
+	position: absolute;
+	top: 4rem;
+	left: 4rem;
+	}
+
+	&__logo {
+		height: 3.5rem;
+	}
+
+	&__logo:hover {
+		animation: spin 1s;
+	}
+
+	&__text-box {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%); /*This means that this element is not relative to parent element anymore but to itself, 50% is make it in the middle no start with 50% of the parent element*/
+		text-align: center;
+	}
+}
